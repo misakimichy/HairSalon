@@ -16,6 +16,20 @@ h1, p {
     text-align: center;
 }
 
+.btn {
+    display: block;
+    margin: 30px auto 0 auto;
+}
+
+.form-group {
+    border: 1px solid #ced4da;
+    padding: 50px;
+}
+
+.form-control {
+    margin-bottom: 30px;
+}
+
 footer {
     display:flex;
     justify-content: center;
