@@ -2,9 +2,9 @@
   Layout = "_Layout";
 }
 
-@model HairSalon.Models.Stylist
+@model HairSalon.Models.Customer
 
-<h1>Add a new stylist</h1>
+<h1>Add a new Customer</h1>
 
 <div class="form-container">
 @using (Html.BeginForm())
@@ -12,12 +12,12 @@
     @Html.LabelFor(model => model.Name) <br>
     @Html.TextBoxFor(model => model.Name) <br><br>
 
-    @Html.LabelFor(model => model.Description) <br>
-    @Html.TextBoxFor(model => model.Description) <br>
+    @Html.LabelFor(model => model.Stylist)
+    @Html.DropDownList("StylistId")
 
     <input type="submit" value="Add" class="btn btn-secondary"/>
 }
 </div>
 
-<p>@Html.ActionLink("Show all stylists", "Index")</p>
+<p>@Html.ActionLink("Show all Customers", "Index")</p>
 <p>@Html.ActionLink("Home", "Index", "Home")</p>
