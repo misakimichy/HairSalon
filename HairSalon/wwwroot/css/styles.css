@@ -21,13 +21,17 @@ h1, p {
     margin: 30px auto 0 auto;
 }
 
-.form-group {
-    border: 1px solid #ced4da;
-    padding: 50px;
-}
-
-.form-control {
+.form-container {
+    max-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 30px;
+    border: 1px solid #6c757d;
+    border-radius: 4px;
+    padding: 30px;
+    margin: 0 auto 30px auto;
+    
 }
 
 footer {
