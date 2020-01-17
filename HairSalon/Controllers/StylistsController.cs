@@ -16,7 +16,6 @@ namespace HairSalon.Controllers
             _db = db;
         }
 
-        // Not working!!!
         public ActionResult Index()
         {
             List<Stylist> model = _db.Stylists.ToList();
@@ -36,5 +35,25 @@ namespace HairSalon.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult Details(int id)
+        {
+            Stylist thisStylist = _db.Stylists.FirstOrDefault(stylists => stylists.StylistId == id);
+            return View(thisStylist);
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var thisStylist = _db.Stylists.FirstOrDefault(stylists => stylists.StylistId == id);
+            ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Name");
+            return View(thisStylist);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(Stylist stylist)
+        {
+            _db.Entry(stylist).State = EntityState.Modified;
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
