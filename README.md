@@ -3,18 +3,49 @@
 #### _C#, .NET: Hair Salon, 01/17/2020_
 
 ## Description
-Create a web application of a hair salon called Eau Claire's Salon. Clair should be able to add a list of stylists working at the salon, and for each stylist, add clients who see that stylist. Tye stylist have specific specialities, so each client can only belong to a single stylist.
+Create a web application of a hair salon called Eau Claire's Salon. Claire should be able to add a list of stylists working at the salon, and for each stylist, add clients who see that stylist. Tye stylist have specific specialties, so each client can only belong to a single stylist.
 
-## Application should have:
-- `Cuisine` class - has all CRUD functionality (Create, Read, Update, Delete). "Read" means to view a particular cuisine and to list out all of the cuisines.
+## About this application
+- Claire can see a list of all stylists.
 
-- `Restaurant` class - has CRUD functionality
+- Claire can select a stylist, see the details, and see a list of all clients that belong to that stylist.
 
-- `Restaurant` class has its `Name` and `BestFood` properties.
+- Claire can edit the details of specific stylist's information.
 
-- There is a connection between a cuisine and a restaurant in the database. A cuisine can have many restaurants, but a restaurant can only be attached to one cuisine.
+- Claire can add a new stylists to the system when they are hired.
+
+- Claire can see a list of all stylists.
+
+- Claire can add a new client to the specific stylist. Claire should not be able to add a client if no stylists have been added.
+
+- Claire can edit the details of specific customer's information.
 
 
+## SQL Command
+Please use these following command to create tables on MySQL
+
+
+For `stylists` table:
+```
+CREATE TABLE `stylists` (
+  `StylistId` int(11) NOT NULL AUTO_INCREMENT,
+  `Name` varchar(255) DEFAULT NULL,
+  `Description` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`StylistId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+```
+
+For `customers` table:
+```
+CREATE TABLE `customers` (
+  `CustomerId` int(11) NOT NULL AUTO_INCREMENT,
+  `Name` varchar(255) DEFAULT NULL,
+  `StylistId` int(11) DEFAULT '0',
+  PRIMARY KEY (`CustomerId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+```
 
 ## Installation:
 1. Clone this repo:
