@@ -34,17 +34,15 @@ namespace HairSalon.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult Details (int id)
+        public ActionResult Details(int id)
         {
             Customer thisCustomer = _db.Customers.FirstOrDefault(customers => customers.CustomerId == id);
-            ViewBag.StyleId = new SelectList(_db.Stylists, "StylistId", "Name");
             return View(thisCustomer);
         }
 
         public ActionResult Edit(int id)
         {
-            Customer thisCustomer = _db.Customers.FirstOrDefault(customers => customers.CustomerId == id);
-            ViewBag.StyleId = new SelectList(_db.Stylists, "StylistId", "Name");
+            var thisCustomer = _db.Customers.FirstOrDefault(customers => customers.CustomerId == id);
             return View(thisCustomer);
         }
 
