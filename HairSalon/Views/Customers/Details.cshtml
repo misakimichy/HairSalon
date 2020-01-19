@@ -8,7 +8,16 @@
 
 <div class="info-container">
     <h5>Customer @Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h5>
-    <h5>@Html.DisplayNameFor(model => model.Stylist): @ViewBag.Name</h5>
+    <h5>@Html.DisplayNameFor(model => model.Stylist): 
+        @if(@ViewBag.Active)
+        {
+            <h5>@ViewBag.Name</h5>
+        }
+        else
+        {
+            <h5>This customer doesn't have a stylist.</h5>
+        }
+    </h5>
 </div>
 
 
