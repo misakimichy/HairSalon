@@ -15,7 +15,7 @@ else
     <ul class="info-container">
     @foreach (Customer customer in Model)
     {
-        <li>@Html.ActionLink($"{customer.Name}", "Details", new { id = customer.CustomerId}, null) <br> Stylist: @customer.Stylist.Name</li>
+        <li>@Html.ActionLink($"{customer.Name}", "Details", new { id = customer.CustomerId})</li>
         <hr />
     }
     </ul>

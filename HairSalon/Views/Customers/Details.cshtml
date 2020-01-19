@@ -7,10 +7,11 @@
 <h1>Customer Details</h1>
 
 <div class="info-container">
-    <h5>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h5>
+    <h5>Customer @Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h5>
+    <h5>@Html.DisplayNameFor(model => model.Stylist): @ViewBag.Name</h5>
 </div>
 
 
-<p>@Html.ActionLink("Back to List", "Index")</p>
+<p>@Html.ActionLink("Back to Customer List", "Index")</p>
 <p>@Html.ActionLink("Edit info", "Edit", new { id = Model.CustomerId})</p>
 <p>@Html.ActionLink("Home", "Index", "Home")</p>
