@@ -16,7 +16,8 @@ namespace HairSalon.Controllers
         }
         public ActionResult Index()
         {
-            List<Customer> model = _db.Customers.Include(customers => customers.Stylist).ToList();
+            // Show all the customers regardless the stylist
+            List<Customer> model = _db.Customers.ToList();
             return View(model);
         }
 
