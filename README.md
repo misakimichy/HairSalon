@@ -12,7 +12,9 @@ Create a web application of a hair salon called Eau Claire's Salon. Claire shoul
 
 - Claire can edit the details of specific stylist's information.
 
-- Claire can add a new stylists to the system when they are hired.
+- Claire can add a new stylist to the system when they are hired.
+
+- Claire can delete a stylist from table or deactivate stylist. (Delete: delete the stylist record, Deactivate: keep the stylist data but not working there anymore so that cannot be assigned to a customer.)
 
 - Claire can see a list of all stylists.
 
@@ -31,8 +33,9 @@ CREATE TABLE `stylists` (
   `StylistId` int(11) NOT NULL AUTO_INCREMENT,
   `Name` varchar(255) DEFAULT NULL,
   `Description` varchar(255) DEFAULT NULL,
+  `Active` tinyint(4) DEFAULT '1',
   PRIMARY KEY (`StylistId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 ```
 
@@ -40,10 +43,10 @@ For `customers` table:
 ```
 CREATE TABLE `customers` (
   `CustomerId` int(11) NOT NULL AUTO_INCREMENT,
-  `Name` varchar(255) DEFAULT NULL,
+  `Name` varchar(255) DEFAULT 'null',
   `StylistId` int(11) DEFAULT '0',
   PRIMARY KEY (`CustomerId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 ```
 
@@ -53,24 +56,22 @@ CREATE TABLE `customers` (
 $ git clone https://github.com/misakimichy/BestRestaurant.Solution.git
 ```
 
-2. Use the following codes:
+2. Create `customers` and `stylists` tables for database using SQL command. 
 
-a) Command to build the BestRestaurant. Run this in BestRestaurant directory:
+
+3. Use the following codes:
+
+Command to build the BestRestaurant. Run this in BestRestaurant directory:
 ```
 $ dotnet build && $ dotnet run
 ```
 
 
-b) Command for unit testing. Run this in BestRestaurant.Tests directory:
-```
-$ dotnet restore && dotnet test
-```
-
 ## Known Bugs
-* No known bugs at this time.
+When you edit the stylist of customer from `/Customers/Edit/{Id}`, the stylist is not updated.
 
 ## Support and contact details
- misaki.koonce@gmail.com
+I welcome any feedbacks and questions to misaki.koonce@gmail.com
 
 ## Technologies Used
 _Git, GitHub, CSS, Bootstrap, C#, ASP.NET Core MVC, Entity and MySQL
