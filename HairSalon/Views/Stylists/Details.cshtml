@@ -10,18 +10,10 @@
     <h5>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h5>
     <h5>@Html.DisplayNameFor(model => model.Description): <br>@Html.DisplayFor(model => model.Description)</h5>
     <h5>@Html.DisplayNameFor(model => model.Active): @Html.DisplayFor(model => model.Active)</h5>
-    @* Hiring Status: @if(@Model.Active == true)
-    {
-        <h5>"Emoployed"</h5>
-    }
-    else
-    {
-        <h5>"Quit"</h5>
-    } *@
 </div>
 
 
 <p>@Html.ActionLink("Back to List", "Index")</p>
 <p>@Html.ActionLink("Edit info", "Edit", new {id = Model.StylistId})</p>
-<p>@Html.ActionLink("Deactivate Stylist", "Delete", new {id = Model.StylistId})</p>
+<p>@Html.ActionLink("Delete Stylist", "Delete", new {id = Model.StylistId})</p>
 <p>@Html.ActionLink("Home", "Index", "Home")</p>

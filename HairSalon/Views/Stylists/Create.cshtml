@@ -9,13 +9,15 @@
 <div class="form-container">
 @using (Html.BeginForm())
 {
-    @Html.LabelFor(model => model.Name) <br>
-    @Html.TextBoxFor(model => model.Name) <br><br>
+  @Html.LabelFor(model => model.Name) <br>
+  @Html.TextBoxFor(model => model.Name) <br><br>
 
-    @Html.LabelFor(model => model.Description) <br>
-    @Html.TextBoxFor(model => model.Description) <br>
+  @Html.LabelFor(model => model.Description) <br>
+  @Html.TextBoxFor(model => model.Description) <br><br>
 
-    <input type="submit" value="Add" class="btn btn-secondary"/>
+  @Html.LabelFor(model => model.Active)
+  @Html.EditorFor(model => model.Active)<br><br>
+  <input type="submit" value="Add" class="btn btn-secondary"/>
 }
 </div>
 
