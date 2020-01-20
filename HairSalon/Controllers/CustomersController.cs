@@ -47,7 +47,8 @@ namespace HairSalon.Controllers
         public ActionResult Edit(int id)
         {
             var thisCustomer = _db.Customers.FirstOrDefault(customers => customers.CustomerId == id);
-            ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Name");
+            List<Stylist> activeStylist = _db.Stylists.Where(stylists => stylists.Active == true).ToList();
+            ViewBag.activeStylist = activeStylist;
             return View(thisCustomer);
         }
 

@@ -9,15 +9,19 @@
 <div class="form-container">
 @using (Html.BeginForm())
 {
-    @Html.HiddenFor(model => model.CustomerId)
+  @Html.HiddenFor(model => model.CustomerId)
 
-    @Html.LabelFor(model => model.Name)<br>
-    @Html.EditorFor(model => model.Name)<br><br>
-    
-    @Html.LabelFor(model => model.Stylist)
-    @Html.DropDownList("StylistId")
-
-    <input type="submit" value="Save" class="btn btn-secondary"/>
+  @Html.LabelFor(model => model.Name)<br>
+  @Html.EditorFor(model => model.Name)<br><br>
+  
+  @Html.LabelFor(model => model.Stylist)
+  <select>
+    @foreach (var stylist in ViewBag.activeStylist)
+    {
+      <option value="stylist.StylistId">@stylist.Name</option>
+    }
+  </select>
+  <input type="submit" value="Save" class="btn btn-secondary"/>
 }
 </div>
 
