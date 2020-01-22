@@ -53,7 +53,7 @@ CREATE TABLE `customers` (
 ## Installation:
 1. Clone this repo:
 ```
-$ git clone https://github.com/misakimichy/BestRestaurant.Solution.git
+$ git clone https://github.com/misakimichy/HairSalon.git
 ```
 
 2. Create `customers` and `stylists` tables for database using SQL command. 
@@ -74,7 +74,7 @@ When you edit the stylist of customer from `/Customers/Edit/{Id}`, the stylist i
 I welcome any feedbacks and questions to misaki.koonce@gmail.com
 
 ## Technologies Used
-_Git, GitHub, CSS, Bootstrap, C#, ASP.NET Core MVC, Entity and MySQL
+Git, GitHub, CSS, Bootstrap, C#, ASP.NET Core MVC, Entity Framework and MySQL
 
 ## License
 Copyright © 2020 under the MIT License
